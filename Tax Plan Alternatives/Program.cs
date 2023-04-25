@@ -63,23 +63,28 @@ class TaxPlanTest
         taxPlan.Food = Convert.ToDouble(Console.ReadLine());
 
         // clothing
-        Console.WriteLine("Enter Clothing Expenses: ");
+        Console.Write("Enter Clothing Expenses: ");
         taxPlan.Clothing = Convert.ToDouble(Console.ReadLine());
 
         // transportation
-        Console.WriteLine("Enter Transportation Expenses: ");
+        Console.Write("Enter Transportation Expenses: ");
         taxPlan.Transportation = Convert.ToDouble(Console.ReadLine());
 
         // education
-        Console.WriteLine("Enter Education Expenses: ");
+        Console.Write("Enter Education Expenses: ");
         taxPlan.Education = Convert.ToDouble(Console.ReadLine());
 
         // healthcare
-        Console.WriteLine("Enter Health Care Expenses: ");
+        Console.Write("Enter Health Care Expenses: ");
         taxPlan.HealthCare = Convert.ToDouble(Console.ReadLine());
 
         // vacations
-        Console.WriteLine("Enter Vacations Expenses: ");
+        Console.Write("Enter Vacations Expenses: ");
         taxPlan.Vacations = Convert.ToDouble(Console.ReadLine());
+        
+        TaxPlan taxPlan1 = new TaxPlan(taxPlan.Housing, taxPlan.Food, taxPlan.Clothing, taxPlan.Transportation, taxPlan.Education, taxPlan.HealthCare, taxPlan.Vacations);
+
+        Console.WriteLine("\nTotal Expenses: $" + taxPlan1.TotalExpenses());
+        Console.WriteLine("Fair Tax: $" + taxPlan1.FairTax());
     }
 }
